@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const axios = require('axios');
 const fp = require('lodash/fp');
 
@@ -6,6 +7,7 @@ const neko = async () => {
     fp.flow(
       fp.get('data.results'),
       fp.map('url'),
+      fp.tap(x => console.log('neko(): ', x)),
     ),
   );
 };
